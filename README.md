@@ -5,3 +5,4 @@
 - JSON Editor + Prettier
 - Empty Space
 - Terser Online
+- String Encode/Decode

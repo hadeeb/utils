@@ -14,12 +14,13 @@
     navigator.permissions
       .query({ name: "clipboard-write" })
       .then(({ state }) => {
-        if (state !== "granted") throw Error("Can't write to clipboard");
+        if (state === "denied") throw Error("Can't write to clipboard");
       })
       .then(() => {
-        navigator.clipboard.writeText(minifiedCode).then(() => {
-          console.log("Copied");
-        });
+        return navigator.clipboard.writeText(minifiedCode);
+      })
+      .then(() => {
+        console.log("Copied");
       })
       .catch(err => {
         console.error(err);
@@ -67,12 +68,12 @@
 <main>
   <label>
     <span>Input</span>
-    <textarea bind:value={code} />
+    <textarea bind:value="{code}"></textarea>
   </label>
   <label>
     <span>Output</span>
-    <textarea disabled bind:value={minifiedCode} />
+    <textarea disabled bind:value="{minifiedCode}"></textarea>
   </label>
 </main>
 
-<button on:click={onCopy}>Copy</button>
+<button on:click="{onCopy}">Copy</button>

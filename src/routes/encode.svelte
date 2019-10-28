@@ -65,17 +65,17 @@
 
 <main>
   <h2>{sourceText}</h2>
-  <button on:click={onSwitch}>Switch</button>
+  <button on:click="{onSwitch}">Switch</button>
   <article>
     <label>
       <span>Input</span>
-      <textarea bind:value={code} />
+      <textarea bind:value="{code}"></textarea>
     </label>
     <label>
       <span>Output</span>
-      <textarea bind:value={encoded} />
+      <textarea bind:value="{encoded}"></textarea>
     </label>
   </article>
 </main>
 
-<button on:click={onCopy}>Copy</button>
+<button on:click="{onCopy}">Copy</button>
