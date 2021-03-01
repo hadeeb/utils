@@ -14,7 +14,7 @@
   "dependencies": {
     "compression": "^1.7.4",
     "polka": "next",
-    "prismjs": "^1.17.1",
+    "prismjs": "^1.23.0",
     "sirv": "^0.4.2"
   },
   "devDependencies": {
